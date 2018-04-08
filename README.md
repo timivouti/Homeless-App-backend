@@ -38,6 +38,7 @@ https://homeless-app-backend.herokuapp.com/api/login
   email: String,
   password: String
 }
+``
 
 ###returns
 ``
@@ -52,6 +53,7 @@ OR
 {
   err: 'Authentication failed'
 }
+``
 
 ##POST /api/items/:id
 https://homeless-app-backend.herokuapp.com/api/items/:id
