@@ -80,7 +80,7 @@ module.exports = {
       .then((user) => {
         const returnUser = user;
         returnUser.password = null;
-        return returnUser;
+        return res.send(returnUser);
       })
       .catch(next);
   },
