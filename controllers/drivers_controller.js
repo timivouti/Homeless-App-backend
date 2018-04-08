@@ -75,11 +75,10 @@ module.exports = {
 
   getUser(req, res, next) {
     const userId = req.params.id;
-    let returnUser = {};
 
     User.findById({ _id: userId })
       .then((user) => {
-        returnUser = user;
+        const returnUser = user;
         returnUser.password = null;
         return returnUser;
       })
