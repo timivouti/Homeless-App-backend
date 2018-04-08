@@ -75,11 +75,11 @@ module.exports = {
 
   getUser(req, res, next) {
     const userId = req.params.id;
-    let returnUser;
+    let returnUser = {};
 
     User.findById({ _id: userId })
       .then((user) => {
-        returnUser.push(user);
+        returnUser = user;
         returnUser.password = null;
         return returnUser;
       })
