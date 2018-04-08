@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const routes = require('./routes/routes');
 
 const app = express();
@@ -11,16 +12,11 @@ if (process.env.NODE_ENV !== 'test') {
 }
 
 app.use(bodyParser.json());
+app.use(cors());
 routes(app);
 
 app.use((err, req, res, next) => {
   res.status(422).send({ error: err.message });
-});
-
-app.use(function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  next();
 });
 
 module.exports = app;
