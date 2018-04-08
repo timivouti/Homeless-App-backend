@@ -13,19 +13,19 @@ https://homeless-app-backend.herokuapp.com/api/users
 
 ### payload
 ``
-{&nbsp;
-  email: String,&nbsp;
-  password: String,&nbsp;
-  name: String&nbsp;
+{
+  email: String,
+  password: String,
+  name: String
 }
 ``
 
 ### returns
 ``
-{&nbsp;
-  email: String,&nbsp;
-  id: String,&nbsp;
-  name: String&nbsp;
+{
+  email: String,
+  id: String,
+  name: String
 }
 ``
 
@@ -34,24 +34,24 @@ https://homeless-app-backend.herokuapp.com/api/login
 
 ### payload
 ``
-{&nbsp;
-  email: String,&nbsp;
-  password: String&nbsp;
+{
+  email: String,
+  password: String
 }
 ``
 
 ### returns
 ``
-{&nbsp;
-  email: String,&nbsp;
-  id: String,&nbsp;
-  name: String&nbsp;
+{
+  email: String,
+  id: String,
+  name: String
 }
 ``
 OR
 ``
-{&nbsp;
-  err: 'Authentication failed'&nbsp;
+{
+  err: 'Authentication failed'
 }
 ``
 
@@ -60,17 +60,17 @@ https://homeless-app-backend.herokuapp.com/api/items/:id
 
 ### payload
 ``
-{&nbsp;
-  name: String,&nbsp;
-  price: Number&nbsp;
+{
+  name: String,
+  price: Number
 }
 ``
 
 ### returns
 ``
-{&nbsp;
-  name: String,&nbsp;
-  price: Number&nbsp;
+{
+  name: String,
+  price: Number
 }
 ``
 
@@ -87,8 +87,8 @@ https://homeless-app-backend.herokuapp.com/api/ads/:id
 
 ### returns
 ``
-{&nbsp;
-  countads: Number&nbsp;
+{
+  countads: Number
 }
 ``
 
@@ -97,11 +97,11 @@ https://homeless-app-backend.herokuapp.com/api/:id
 
 ### returns
 ``
-{&nbsp;
-  email: String,&nbsp;
-  name: String,&nbsp;
-  password: '',&nbsp;
-  countads: Number,&nbsp;
-  items: [{ name: String, price: Number, date: Date }...]&nbsp;
+{
+  email: String,
+  name: String,
+  password: '',
+  countads: Number,
+  items: [{ name: String, price: Number, date: Date }...]
 }
 ``
