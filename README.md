@@ -1,107 +1,107 @@
 NodeJS backend with MongoDB
 
-##GET /api/items/all
+## GET /api/items/all
 https://homeless-app-backend.herokuapp.com/api/items/all
 
-###returns
+### returns
 ``
 [{name: String, price: Number, date: Date }...]
 ``
 
-##POST /api/users
+## POST /api/users
 https://homeless-app-backend.herokuapp.com/api/users
 
-###payload
+### payload
 ``
-{
-  email: String,
-  password: String,
-  name: String
+{&nbsp;
+  email: String,&nbsp;
+  password: String,&nbsp;
+  name: String&nbsp;
 }
 ``
 
-###returns
+### returns
 ``
-{
-  email: String,
-  id: String,
-  name: String
+{&nbsp;
+  email: String,&nbsp;
+  id: String,&nbsp;
+  name: String&nbsp;
 }
 ``
 
-##POST /api/login
+## POST /api/login
 https://homeless-app-backend.herokuapp.com/api/login
 
-###payload
+### payload
 ``
-{
-  email: String,
-  password: String
+{&nbsp;
+  email: String,&nbsp;
+  password: String&nbsp;
 }
 ``
 
-###returns
+### returns
 ``
-{
-  email: String,
-  id: String,
-  name: String
+{&nbsp;
+  email: String,&nbsp;
+  id: String,&nbsp;
+  name: String&nbsp;
 }
 ``
 OR
 ``
-{
-  err: 'Authentication failed'
+{&nbsp;
+  err: 'Authentication failed'&nbsp;
 }
 ``
 
-##POST /api/items/:id
+## POST /api/items/:id
 https://homeless-app-backend.herokuapp.com/api/items/:id
 
-###payload
+### payload
 ``
-{
-  name: String,
-  price: Number
+{&nbsp;
+  name: String,&nbsp;
+  price: Number&nbsp;
 }
 ``
 
-###returns
+### returns
 ``
-{
-  name: String,
-  price: Number
+{&nbsp;
+  name: String,&nbsp;
+  price: Number&nbsp;
 }
 ``
 
-##GET /api/items/:id
+## GET /api/items/:id
 https://homeless-app-backend.herokuapp.com/api/items/:id
 
-###returns
+### returns
 ``
 [{ name: String, price: Number, date: Date }...]
 ``
 
-##PUT /api/ads/:id
+## PUT /api/ads/:id
 https://homeless-app-backend.herokuapp.com/api/ads/:id
 
-###returns
+### returns
 ``
-{
-  countads: Number
+{&nbsp;
+  countads: Number&nbsp;
 }
 ``
 
-##GET /api/:id
+## GET /api/:id
 https://homeless-app-backend.herokuapp.com/api/:id
 
-###returns
+### returns
 ``
-{
-  email: String,
-  name: String,
-  password: '',
-  countads: Number,
-  items: [{ name: String, price: Number, date: Date }...]
+{&nbsp;
+  email: String,&nbsp;
+  name: String,&nbsp;
+  password: '',&nbsp;
+  countads: Number,&nbsp;
+  items: [{ name: String, price: Number, date: Date }...]&nbsp;
 }
 ``
