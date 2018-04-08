@@ -15,7 +15,10 @@ module.exports = {
     userProps.password = hashedPassword;
 
     User.create(userProps)
-      .then(user => res.send(user))
+      .then(user => {
+        const { email, _id, name } = user;
+        return res.send({ email, _id, name });
+      })
       .catch(next);
   },
 

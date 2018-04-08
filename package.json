@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "SET NODE_ENV=test && nodemon --exec mocha --recursive -R min",
-    "run": "node index.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",

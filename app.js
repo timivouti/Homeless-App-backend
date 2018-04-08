@@ -7,7 +7,7 @@ const app = express();
 
 mongoose.Promise = global.Promise;
 if (process.env.NODE_ENV !== 'test') {
-  mongoose.connect('mongodb://localhost/homelessapp');
+  mongoose.connect('mongodb://timi:q6ntgeihw6qpB4ME@homelessapp-shard-00-00-izfbz.mongodb.net:27017,homelessapp-shard-00-01-izfbz.mongodb.net:27017,homelessapp-shard-00-02-izfbz.mongodb.net:27017/homelessapp?ssl=true&replicaSet=HomelessApp-shard-0&authSource=admin');
 }
 
 app.use(bodyParser.json());
