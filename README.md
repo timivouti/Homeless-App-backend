@@ -74,12 +74,22 @@ https://homeless-app-backend.herokuapp.com/api/items/:id
 }
 ``
 
+## PUT /api/items/:id
+https://homeless-app-backend.herokuapp.com/api/items/:id
+
+### returns
+``
+{
+  success: true
+}
+``
+
 ## GET /api/items/:id
 https://homeless-app-backend.herokuapp.com/api/items/:id
 
 ### returns
 ``
-[{ name: String, price: Number, date: Date }...]
+[{ name: String, price: Number, date: Date, activated: Boolean }...]
 ``
 
 ## PUT /api/ads/:id
@@ -102,6 +112,6 @@ https://homeless-app-backend.herokuapp.com/api/:id
   name: String,
   password: '',
   countads: Number,
-  items: [{ name: String, price: Number, date: Date }...]
+  items: [{ name: String, price: Number, date: Date, activated: Boolean }...]
 }
 ``

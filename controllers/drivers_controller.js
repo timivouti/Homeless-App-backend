@@ -54,6 +54,15 @@ module.exports = {
     .catch(next);
   },
 
+  editItem(req, res, next) {
+    const { userId, itemId } = req.body;
+
+    User.update({ _id: userId, "items._id": itemId },
+      { "$set": { "items.$.activated": true } })
+      .then(() => res.send({ success: true }))
+      .catch(next);
+  },
+
   getItems(req, res, next) {
     const userId = req.params.id;
 
@@ -68,8 +77,8 @@ module.exports = {
     const userId = req.params.id;
 
     User.findByIdAndUpdate({ _id: userId }, { $inc: { countads: 1 } })
-      .then(() => User.findById(userId))
-      .then((user) => res.send(user.countads))
+      .then(() => User.findById({ _id: userId }))
+      .then((user) => res.send({ countads: user.countads }))
       .catch(next);
   },
 

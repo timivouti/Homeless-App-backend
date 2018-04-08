@@ -84,7 +84,7 @@ describe('Drivers controller', () => {
     name: 'test' });
 
     user.save().then(() => {
-      User.findById(user._id)
+      User.findById({ _id: user._id })
         .then((users) => {
           request(app)
             .put(`/api/ads/${user._id}`)
@@ -134,5 +134,35 @@ describe('Drivers controller', () => {
           done();
         });
     });
+  });
+
+  it('PUT /api/items changes item to activated', (done) => {
+    const user = new User({ email: 't@t.com',
+    password: '$2a$10$vXryQ1bsr0LfX4O6POFQdu8KpWUda602yaghlPaS1UPUhWXLJKYgC',
+    name: 't' });
+
+    const secondUser = new User({ email: 'test@t.com',
+    password: '$2a$10$vXryQ1bsr0LfX4O6POFQdu8KpWUda602yaghlPaS1UPUhWXLJKYgC',
+    name: 'test' });
+
+    user.items.push({ name: 'Blanket', price: 5 });
+    user.items.push({ name: 'Fish And Chips', price: 7 });
+    secondUser.items.push({ name: 'Fish And Chips', price: 7 });
+
+    Promise.all([user.save(), secondUser.save()])
+      .then(() => {
+        User.findOne({ _id: user._id }).then((users) => {
+          request(app)
+            .put('/api/items')
+            .send({ userId: users._id, itemId: users.items[0]._id })
+            .end(() => {
+              User.findOne({ _id: users._id })
+                .then((finalUser) => {
+                  assert(finalUser.items[0].activated === true);
+                  done();
+                });
+            });
+        });
+      });
   });
 });

@@ -5,7 +5,11 @@ const Schema = mongoose.Schema;
 const ItemsSchema = new Schema({
   name: String,
   price: Number,
-  date: Date
+  date: Date,
+  activated: {
+    type: Boolean,
+    default: false
+  }
 });
 
 const UserSchema = new Schema({

@@ -7,6 +7,7 @@ module.exports = (app) => {
   app.post('/api/users', DriversController.create);
   app.post('/api/login', DriversController.logIn);
   app.post('/api/items/:id', DriversController.createItem);
+  app.put('/api/items/', DriversController.editItem);
   app.get('/api/items/:id', DriversController.getItems);
   app.put('/api/ads/:id', DriversController.editAds);
   app.get('/api/:id', DriversController.getUser);
