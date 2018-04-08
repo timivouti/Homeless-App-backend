@@ -69,15 +69,20 @@ module.exports = {
 
     User.findByIdAndUpdate({ _id: userId }, { $inc: { countads: 1 } })
       .then(() => User.findById(userId))
-      .then((user) => res.send(user))
+      .then((user) => res.send(user.countads))
       .catch(next);
   },
 
   getUser(req, res, next) {
     const userId = req.params.id;
+    let returnUser;
 
     User.findById({ _id: userId })
-      .then((user) => res.send(user))
+      .then((user) => {
+        returnUser.push(user);
+        returnUser.password = null;
+        return returnUser;
+      })
       .catch(next);
   },
 
